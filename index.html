@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="mcet4.css">
+</head>
+<body>
+   <!-- Wavy Background -->
+   <div class="wave"></div>
+
+   <!-- Leaves -->
+   <img src="logo3.png" alt="Leaf 1" class="leaf leaf1">
+   <img src="ig.png" alt="Leaf 2" class="leaf leaf2">
+   <br><br>
+
+   <!-- Login Form -->
+   <div class="login-form">
+       <h1>Welcome</h1>
+       <p>Login to your account</p>
+       <br>
+       <form>
+           <div class="form-group">
+               <b><label for="name" style="color: #010000;" >Register Number</label></b>
+               <input type="text" id="name" placeholder="727624" required>
+           </div>
+           <div class="form-group">
+               <b><label for="password" style="color: #010000;" >Password</label></b>
+               <input type="password" id="password" placeholder="Enter your password " required>
+           </div>
+           <!-- Login Button -->
+           <a   href="https://drmcet.ac.in/sproutlms/"  style="text-decoration: dashed;"><button type="button" id="login-btn" class="login-btn">Login</button></a>
+       </form>
+       <br>
+       <p style="color: white;">Don't have an account?<br> <a href="signup.html">Sign up</a></p>
+   </div>
+
+   <!-- Include Canvas Confetti Library -->
+   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+   <!-- Add Confetti Effect -->
+   <script>
+       document.getElementById('login-btn').addEventListener('click', function () {
+           
+           confetti({
+               particleCount: 150, // Number of particles
+               spread: 50,        
+               origin: { x: 0.5, y: 0.5 }, // Origin point (above the login form)
+               colors: ['#ff5733', '#33ff57', '#3357ff'] // Custom colors
+           });
+             
+           
+       });
+   </script>
+</body>
