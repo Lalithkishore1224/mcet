@@ -15,6 +15,7 @@ body, html {
     background-size: cover; /* Ensure background fills the screen */
     
 }
+
 #particle-container {
     position: absolute;
     top: 0;
@@ -71,6 +72,40 @@ body, html {
     background: blur 0 0 0;
   }
 
+
+  
+.login-form h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #010000;
+    margin-bottom: 10px;
+}
+
+.login-form p {
+    font-size: 16px;
+    color: #6e6e6e;
+    margin-bottom: 9px;
+}
+
+/* Adjusting the form group to prevent overlap issues */
+.login-form {
+    position: absolute;
+    bottom: 0; /* Aligns the form at the bottom of the page */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.8;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    background: blur 0 0 0;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
   .form-group span {
     position: absolute;
     left: 0;
@@ -100,8 +135,6 @@ body, html {
     color: rgba(241, 56, 10, 0.7);
     
   }
-  
-
   
 .login-form h1 {
     font-size: 28px;
@@ -134,12 +167,13 @@ body, html {
 .form-group input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(235, 228, 226, 0.7);
   border-radius: 8px;
   font-size: 14px;
   outline: none;
   background-color: white;  /* Changed from 'snow' to solid white */
 }
+
 
 
 .form-options {
