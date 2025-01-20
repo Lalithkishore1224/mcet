@@ -4,6 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+
+
+    <style>
+        .floating-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+        }
+        
+        .floating-container .floating-button {
+            position: relative;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            margin: auto;
+            background-color: rgba(44, 179,240, 0.8);
+            color: #fff;
+            font-size: 23px;
+            text-align: center;
+            line-height: 65px;
+            box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
+           
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+        
+        .floating-container .element-container {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            opacity: 0%;
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+        
+        .floating-container.active .element-container {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .floating-container .floating-element {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background:linear-gradient(to right, #FFD194, #FF8800, #FF4500);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .floating-container.active .floating-element {
+            transform: translateY(0);
+        }
+        
+        .floating-container .tooltip {
+            display: none;
+        }
+        </style>
     <link rel="stylesheet" href="newmcet.css">
 </head>
 <body>
@@ -37,6 +104,30 @@
        <br>
        <p style="color: white;">Don't have an account?<br> <a href="signup.html">Sign up</a></p>
    </div>
+     </div>
+   <div class="floating-container">
+    <div class="floating-button">+</div>
+    <div class="element-container">
+        <a href="#" class="floating-element">
+            <i class="material-icons">phone</i>
+            <span class="tooltip" data-color="#42A5F5">Call us</span>
+        </a>
+        <a href="#" class="floating-element">
+            <i class="material-icons">email</i>
+            <span class="tooltip" data-color="#4CAF50">Email us</span>
+        </a>
+        <a href="#" class="floating-element">
+            <i class="material-icons">chat</i>
+            <span class="tooltip" data-color="#FF9800">Contact us</span>
+        </a>
+    </div>
+    </div>
+    <script>
+        document.querySelector('.floating-button').addEventListener('click', function () {
+            const container = document.querySelector('.floating-container');
+            container.classList.toggle('active');
+        });
+    </script>
 
    <!-- Include Canvas Confetti Library -->
    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
